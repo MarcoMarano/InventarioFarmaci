@@ -5,10 +5,7 @@ import {useNavigation } from '@react-navigation/native';
 
 export default NotificationHeader = () =>{
     const navigation = useNavigation();
-    const handlePress = ()=>{
-        console.log("Notification Button  Pressed");
-        navigation.navigate('NotificationPage');
-    }
+    const handlePress = ()=>{ navigation.navigate('NotificationPage');}
 
     return (
         <View style={styles.container}>

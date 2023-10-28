@@ -15,6 +15,16 @@ const useFetchNotification = () =>{
             alert("Qualcosa e' andato storto");
         }
     }
+
+    useEffect( ()=>{
+        fetchData()
+    },[])
+
+    const reFetch = () =>{
+        setIsLoading(true);
+        fetchData();
+    }
+    return {data, isLoading, reFetch}
 }
 
 export default useFetchNotification;
