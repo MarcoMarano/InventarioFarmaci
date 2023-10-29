@@ -4,7 +4,8 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from "../../styles/AddNewItemStyle";
 import { useState, useContext } from "react";
 import useUpdate from "../../hook/useUpdate";
-import {SaveButton , ClearFieldButton} from "../";
+import useDelete from "../../hook/useDelete";
+import {SaveButton , ClearFieldButton, DeleteItem} from "../";
 import { NavigationContext } from '@react-navigation/native';
 
 
@@ -35,6 +36,11 @@ const EditItem = () =>{
                 alert("i campi nome o desrizione sono vuoti");
             }
         };
+
+        const handleDelete = async () =>{
+            await useDelete(detail._id);
+            goToHome(); 
+        }
     //############# BUTTON SECTION ######################//
 
     //############# DATEPICKER SECTION ######################//
@@ -108,8 +114,9 @@ const EditItem = () =>{
                     <View style={styles.buttonContainer}>
                             <ClearFieldButton handlePress={clearFields}/>
                             <SaveButton handleSave={handleSave}/>
-                           
+                            <DeleteItem handleDelete={handleDelete}/>
                     </View>
+                    
                 </View>
             </View>
         </SafeAreaView>

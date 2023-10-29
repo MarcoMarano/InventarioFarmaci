@@ -11,6 +11,7 @@ import ClearFieldButton from "./Buttons/ClearFieldButton";
 import NotificationCenter from "./home/NotificationCenter";
 import NotificationDetail from "./home/NotificationDetail";
 import EditPage from "./toolBar/EditPage"
+import DeleteItem from "./Buttons/DeleteItem";
 export {
     AddNewButton,
     AddNewItem,
@@ -25,4 +26,5 @@ export {
     NotificationCenter,
     NotificationDetail,
     EditPage,
+    DeleteItem,
 }

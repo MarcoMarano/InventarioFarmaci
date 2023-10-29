@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
        marginTop:30,
     },
     dataInfoContainer:{
-        flex:1,
-        height:250,
+        height:100,
         marginHorizontal:30,
         marginVertical:10,
         marginTop:120,
@@ -37,6 +36,12 @@ const styles = StyleSheet.create({
     textDateStyle:{
       fontFamily:FONT.medium,
       fontSize: SIZES.large,
+    },
+    buttonContainer:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 60,
+        marginLeft:25,
     },  
 
 });
