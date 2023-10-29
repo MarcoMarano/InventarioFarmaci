@@ -1,16 +1,20 @@
-import { SafeAreaView, View, TextInput, TouchableOpacity, Text, Image, Platform } from "react-native";
+import { SafeAreaView, View, TextInput, Text } from "react-native";
 import {useNavigation} from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from "../../styles/AddNewItemStyle";
-import { useState } from "react";
-import useWrite from "../../hook/useWrite";
+import { useState, useContext } from "react";
+import useUpdate from "../../hook/useUpdate";
 import {SaveButton , ClearFieldButton} from "../";
+import { NavigationContext } from '@react-navigation/native';
 
-const AddNewItem = () =>{
-    const [drugName, setDrugName] = useState(" ");
-    const [drugDescription, setdrugDescription] = useState(" ");
-    const [drugInsertionDate, setDrugInsertionDate] = useState(new Date());
-    const [drugExpirationDate, setDrugExpirationDate] = useState(new Date());
+
+const EditItem = () =>{
+    const detail = useContext(NavigationContext).getState().routes[1].params.item;
+
+    const [drugName, setDrugName] = useState(detail.drugName);
+    const [drugDescription, setdrugDescription] = useState(detail.drugDescription);
+    const [drugInsertionDate, setDrugInsertionDate] = useState(new Date(detail.drugInsertionDate));
+    const [drugExpirationDate, setDrugExpirationDate] = useState(new Date(detail.drugExpirationDate));
     const [mode, setMode] = useState('date');
     const [showDatePickerForIns, setshowDatePickerForIns] = useState(false);
     const [showDatePickerForExp, setshowDatePickerForExp] = useState(false);
@@ -24,7 +28,7 @@ const AddNewItem = () =>{
         }
         const handleSave = async () =>{
             if(drugName !="" || drugDescription != ""){
-                await useWrite(drugName, drugDescription, drugInsertionDate, drugExpirationDate);
+                await useUpdate(detail._id,drugName, drugDescription, drugInsertionDate, drugExpirationDate);
                 goToHome();
             }else{
                 console.log("the Name or the Description is empty ");
@@ -112,4 +116,4 @@ const AddNewItem = () =>{
     );
 }
 
-export default AddNewItem;
+export default EditItem;

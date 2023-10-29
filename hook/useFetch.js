@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-const url = "http://localhost:8080/drugList"
+const url = "http://localhost:8080/drugs"
 
 const useFetch = () =>{
     const [data, setData] = useState([]);

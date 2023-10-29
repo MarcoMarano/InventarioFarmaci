@@ -1,9 +1,14 @@
 import { Button } from 'react-native';
+import {useNavigation } from '@react-navigation/native';
+import { useContext } from 'react';
+import { NavigationContext } from '@react-navigation/native';
 
-export default EditDetailButton = () =>{
+export default EditDetailButton = (drug) =>{
+    const detail = useContext(NavigationContext).getState().routes[1].params.item;
+    const navigation = useNavigation();
     const handleEditDetailPress = ()=>{
-        console.log("Pressed editDetail button");
+        navigation.navigate('EditPage', {item: detail});
     }
 
-    return <Button onPress={handleEditDetailPress} title='EditDetail'/>
+    return <Button onPress={handleEditDetailPress} title='Edit'/>
 }
