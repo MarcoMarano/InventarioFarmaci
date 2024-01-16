@@ -1,11 +1,10 @@
-import { NavigationContainer ,useNavigation} from '@react-navigation/native';
+import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View , Text} from 'react-native';
 import {COLORS } from '../../constants'
 import {HomePage , AddNewButton , 
-       AddNewItem , EditButton , 
+       AddNewItem ,
        DrugDetail, EditDetailButton, 
-       NotificationCenter, EditPage} from '../';
+       NotificationCenter, EditPage} from '..';
 
 const Stack = createNativeStackNavigator();
 const Navigator = ()=>{
@@ -19,7 +18,6 @@ const Navigator = ()=>{
                         title: '', 
                         headerLargeStyle: {backgroundColor: COLORS.gray3}, 
                         headerShadowVisible: false,
-                        headerLeft: ()  =>  <EditButton/>,
                         headerRight: () =>  <AddNewButton/>,
                     }}
                 />

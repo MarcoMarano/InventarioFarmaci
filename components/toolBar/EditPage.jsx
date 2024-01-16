@@ -5,7 +5,7 @@ import styles from "../../styles/AddNewItemStyle";
 import { useState, useContext } from "react";
 import useUpdate from "../../hook/useUpdate";
 import useDelete from "../../hook/useDelete";
-import {SaveButton , ClearFieldButton, DeleteItem} from "../";
+import {SaveButton , ClearFieldButton, DeleteItem} from "..";
 import { NavigationContext } from '@react-navigation/native';
 
 

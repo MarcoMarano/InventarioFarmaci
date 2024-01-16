@@ -4,7 +4,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from "../../styles/AddNewItemStyle";
 import { useState } from "react";
 import useWrite from "../../hook/useWrite";
-import {SaveButton , ClearFieldButton} from "../";
+import {SaveButton , ClearFieldButton} from "..";
 
 const AddNewItem = () =>{
     const [drugName, setDrugName] = useState(" ");

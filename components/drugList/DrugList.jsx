@@ -11,7 +11,7 @@ export default DrugList = () =>{
         reFetch();
         setRefreshing(false)
     }, []);
-   
+    
 
     return(
         <View>
@@ -20,7 +20,7 @@ export default DrugList = () =>{
                     data={data}
                     renderItem = {({item}) => (<DrugCard drug={item} />)}
                     onRefresh={onRefresh}
-                    refreshing={refreshing}
+                    refreshing={refreshing}                  
                 />
             )}
         </View>
